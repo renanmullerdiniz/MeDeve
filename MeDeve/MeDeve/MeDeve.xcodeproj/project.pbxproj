@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32C62A922F677521005DF003 /* MeDeve.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32C62A902F677521005DF003 /* MeDeve.xcdatamodeld */; };
+		32C62A962F677524005DF003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C62A952F677524005DF003 /* Assets.xcassets */; };
+		32C62A9A2F677524005DF003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C62A992F677524005DF003 /* Preview Assets.xcassets */; };
+		32C62AB12F677596005DF003 /* MeDeveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA12F677591005DF003 /* MeDeveApp.swift */; };
+		32C62AB22F677596005DF003 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA22F677591005DF003 /* PersistenceController.swift */; };
+		32C62AB32F677596005DF003 /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA42F677592005DF003 /* HapticHelper.swift */; };
+		32C62AB42F677596005DF003 /* WhatsAppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA52F677592005DF003 /* WhatsAppHelper.swift */; };
+		32C62AB52F677596005DF003 /* EmbarrassmentBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */; };
+		32C62AB62F677596005DF003 /* IOUViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA92F677594005DF003 /* IOUViewModel.swift */; };
+		32C62AB72F677596005DF003 /* IOU+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAB2F677594005DF003 /* IOU+CoreData.swift */; };
+		32C62AB82F677596005DF003 /* AddDebtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAD2F677595005DF003 /* AddDebtView.swift */; };
+		32C62AB92F677596005DF003 /* DebtListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAE2F677595005DF003 /* DebtListView.swift */; };
+		32C62ABA2F677596005DF003 /* DebtRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAF2F677595005DF003 /* DebtRowView.swift */; };
+		32C62ABB2F677596005DF003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AB02F677595005DF003 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		32C62A892F677521005DF003 /* MeDeve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeDeve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C62A912F677521005DF003 /* MeDeve.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeDeve.xcdatamodel; sourceTree = "<group>"; };
+		32C62A952F677524005DF003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32C62A972F677524005DF003 /* MeDeve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeDeve.entitlements; sourceTree = "<group>"; };
+		32C62A992F677524005DF003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		32C62AA12F677591005DF003 /* MeDeveApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeDeveApp.swift; sourceTree = "<group>"; };
+		32C62AA22F677591005DF003 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		32C62AA42F677592005DF003 /* HapticHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
+		32C62AA52F677592005DF003 /* WhatsAppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsAppHelper.swift; sourceTree = "<group>"; };
+		32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarrassmentBadge.swift; sourceTree = "<group>"; };
+		32C62AA92F677594005DF003 /* IOUViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUViewModel.swift; sourceTree = "<group>"; };
+		32C62AAB2F677594005DF003 /* IOU+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IOU+CoreData.swift"; sourceTree = "<group>"; };
+		32C62AAD2F677595005DF003 /* AddDebtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDebtView.swift; sourceTree = "<group>"; };
+		32C62AAE2F677595005DF003 /* DebtListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtListView.swift; sourceTree = "<group>"; };
+		32C62AAF2F677595005DF003 /* DebtRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtRowView.swift; sourceTree = "<group>"; };
+		32C62AB02F677595005DF003 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32C62A862F677521005DF003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32C62A802F677521005DF003 = {
+			isa = PBXGroup;
+			children = (
+				32C62AA02F677591005DF003 /* App */,
+				32C62AA62F677593005DF003 /* Components */,
+				32C62AA32F677592005DF003 /* Helpers */,
+				32C62AAA2F677594005DF003 /* Models */,
+				32C62AA82F677594005DF003 /* ViewModels */,
+				32C62AAC2F677595005DF003 /* Views */,
+				32C62A8B2F677521005DF003 /* MeDeve */,
+				32C62A8A2F677521005DF003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32C62A8A2F677521005DF003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32C62A892F677521005DF003 /* MeDeve.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C62A8B2F677521005DF003 /* MeDeve */ = {
+			isa = PBXGroup;
+			children = (
+				32C62A952F677524005DF003 /* Assets.xcassets */,
+				32C62A972F677524005DF003 /* MeDeve.entitlements */,
+				32C62A902F677521005DF003 /* MeDeve.xcdatamodeld */,
+				32C62A982F677524005DF003 /* Preview Content */,
+			);
+			path = MeDeve;
+			sourceTree = "<group>";
+		};
+		32C62A982F677524005DF003 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				32C62A992F677524005DF003 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		32C62AA02F677591005DF003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				32C62AA12F677591005DF003 /* MeDeveApp.swift */,
+				32C62AA22F677591005DF003 /* PersistenceController.swift */,
+			);
+			name = App;
+			path = ../App;
+			sourceTree = "<group>";
+		};
+		32C62AA32F677592005DF003 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				32C62AA42F677592005DF003 /* HapticHelper.swift */,
+				32C62AA52F677592005DF003 /* WhatsAppHelper.swift */,
+			);
+			name = Helpers;
+			path = ../Helpers;
+			sourceTree = "<group>";
+		};
+		32C62AA62F677593005DF003 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */,
+			);
+			name = Components;
+			path = ../Components;
+			sourceTree = "<group>";
+		};
+		32C62AA82F677594005DF003 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32C62AA92F677594005DF003 /* IOUViewModel.swift */,
+			);
+			name = ViewModels;
+			path = ../ViewModels;
+			sourceTree = "<group>";
+		};
+		32C62AAA2F677594005DF003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32C62AAB2F677594005DF003 /* IOU+CoreData.swift */,
+			);
+			name = Models;
+			path = ../Models;
+			sourceTree = "<group>";
+		};
+		32C62AAC2F677595005DF003 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32C62AAD2F677595005DF003 /* AddDebtView.swift */,
+				32C62AAE2F677595005DF003 /* DebtListView.swift */,
+				32C62AAF2F677595005DF003 /* DebtRowView.swift */,
+				32C62AB02F677595005DF003 /* ContentView.swift */,
+			);
+			name = Views;
+			path = ../Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32C62A882F677521005DF003 /* MeDeve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32C62A9D2F677524005DF003 /* Build configuration list for PBXNativeTarget "MeDeve" */;
+			buildPhases = (
+				32C62A852F677521005DF003 /* Sources */,
+				32C62A862F677521005DF003 /* Frameworks */,
+				32C62A872F677521005DF003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeDeve;
+			productName = MeDeve;
+			productReference = 32C62A892F677521005DF003 /* MeDeve.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32C62A812F677521005DF003 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					32C62A882F677521005DF003 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 32C62A842F677521005DF003 /* Build configuration list for PBXProject "MeDeve" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32C62A802F677521005DF003;
+			productRefGroup = 32C62A8A2F677521005DF003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32C62A882F677521005DF003 /* MeDeve */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32C62A872F677521005DF003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C62A9A2F677524005DF003 /* Preview Assets.xcassets in Resources */,
+				32C62A962F677524005DF003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32C62A852F677521005DF003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C62AB92F677596005DF003 /* DebtListView.swift in Sources */,
+				32C62ABA2F677596005DF003 /* DebtRowView.swift in Sources */,
+				32C62AB52F677596005DF003 /* EmbarrassmentBadge.swift in Sources */,
+				32C62AB72F677596005DF003 /* IOU+CoreData.swift in Sources */,
+				32C62AB62F677596005DF003 /* IOUViewModel.swift in Sources */,
+				32C62AB32F677596005DF003 /* HapticHelper.swift in Sources */,
+				32C62AB82F677596005DF003 /* AddDebtView.swift in Sources */,
+				32C62AB22F677596005DF003 /* PersistenceController.swift in Sources */,
+				32C62ABB2F677596005DF003 /* ContentView.swift in Sources */,
+				32C62A922F677521005DF003 /* MeDeve.xcdatamodeld in Sources */,
+				32C62AB12F677596005DF003 /* MeDeveApp.swift in Sources */,
+				32C62AB42F677596005DF003 /* WhatsAppHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		32C62A9B2F677524005DF003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32C62A9C2F677524005DF003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		32C62A9E2F677524005DF003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MeDeve/MeDeve.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MeDeve/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renandiniz.MeDeve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32C62A9F2F677524005DF003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MeDeve/MeDeve.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MeDeve/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renandiniz.MeDeve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32C62A842F677521005DF003 /* Build configuration list for PBXProject "MeDeve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32C62A9B2F677524005DF003 /* Debug */,
+				32C62A9C2F677524005DF003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32C62A9D2F677524005DF003 /* Build configuration list for PBXNativeTarget "MeDeve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32C62A9E2F677524005DF003 /* Debug */,
+				32C62A9F2F677524005DF003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32C62A902F677521005DF003 /* MeDeve.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32C62A912F677521005DF003 /* MeDeve.xcdatamodel */,
+			);
+			currentVersion = 32C62A912F677521005DF003 /* MeDeve.xcdatamodel */;
+			path = MeDeve.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 32C62A812F677521005DF003 /* Project object */;
+}

@@ -5,7 +5,17 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
-        DebtListView(context: viewContext)
+        TabView {
+            DebtListView(context: viewContext)
+                .tabItem {
+                    Label("Dívidas", systemImage: "banknote")
+                }
+
+            LentItemListView(context: viewContext)
+                .tabItem {
+                    Label("Empréstimos", systemImage: "tshirt")
+                }
+        }
     }
 }
 

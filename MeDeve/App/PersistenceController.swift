@@ -45,6 +45,22 @@ struct PersistenceController {
             iou.isPaid      = false
         }
 
+        let lentSamples: [(String, String, String, Int)] = [
+            ("Mariana Souza", "Camiseta azul",    "Show do fim de semana", 3),
+            ("Felipe Rocha",  "God of War PS5",   "",                      20),
+            ("Camila Torres", "Vestido floral",   "Aniversário da Ana",    45),
+        ]
+
+        for (name, item, note, daysAgo) in lentSamples {
+            let lentItem        = LentItem(context: context)
+            lentItem.id         = UUID()
+            lentItem.personName = name
+            lentItem.itemName   = item
+            lentItem.note       = note.isEmpty ? nil : note
+            lentItem.createdAt  = Calendar.current.date(byAdding: .day, value: -daysAgo, to: Date())
+            lentItem.isReturned = false
+        }
+
         try? context.save()
         return controller
     }()

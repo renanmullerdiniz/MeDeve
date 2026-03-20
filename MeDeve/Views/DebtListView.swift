@@ -5,6 +5,8 @@ struct DebtListView: View {
 
     @StateObject private var viewModel: IOUViewModel
     @State private var showingAddDebt = false
+    @State private var showSnackbar = false
+    @State private var snackbarMessage = ""
 
     init(context: NSManagedObjectContext) {
         _viewModel = StateObject(wrappedValue: IOUViewModel(context: context))
@@ -38,6 +40,19 @@ struct DebtListView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .overlay(
+            VStack {
+                Spacer()
+                if showSnackbar {
+                    SnackbarView(message: snackbarMessage)
+                        .padding(.bottom, 32)
+                        .transition(
+                            .move(edge: .bottom).combined(with: .opacity)
+                        )
+                }
+            }
+            .animation(.spring(response: 0.4, dampingFraction: 0.7), value: showSnackbar)
+        )
     }
 
     // MARK: - Empty state
@@ -76,6 +91,20 @@ struct DebtListView: View {
         .listStyle(InsetGroupedListStyle())
     }
 
+    // MARK: - Snackbar
+
+    private func triggerSnackbar(_ message: String) {
+        snackbarMessage = message
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+            showSnackbar = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            withAnimation(.easeOut(duration: 0.3)) {
+                showSnackbar = false
+            }
+        }
+    }
+
     // MARK: - Row helpers
 
     @ViewBuilder
@@ -91,6 +120,7 @@ struct DebtListView: View {
 
                     Button {
                         withAnimation { viewModel.markAsPaid(iou) }
+                        triggerSnackbar("🎉 Pago! Finalmente")
                     } label: {
                         Label("Pago", systemImage: "checkmark.circle.fill")
                     }

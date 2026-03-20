@@ -67,40 +67,61 @@ struct DebtListView: View {
         List {
             Section {
                 ForEach(viewModel.ious, id: \.id) { iou in
-                    DebtRowView(iou: iou, onPaid: {
-                        withAnimation { viewModel.markAsPaid(iou) }
-                    })
-                        .contextMenu {
-                            Button(action: {
-                                withAnimation { viewModel.markAsPaid(iou) }
-                            }) {
-                                Label("Marcar como Pago", systemImage: "checkmark.circle.fill")
-                            }
-
-                            Button(action: {
-                                WhatsAppHelper.sendReminder(
-                                    to: iou.wrappedPersonName,
-                                    amount: iou.amount
-                                )
-                            }) {
-                                Label("Cobrar via WhatsApp", systemImage: "message.fill")
-                            }
-
-                            Button(action: {
-                                withAnimation { viewModel.delete(iou) }
-                            }) {
-                                Label("Apagar", systemImage: "trash.fill")
-                            }
-                        }
-                }
-                .onDelete { offsets in
-                    withAnimation { viewModel.delete(at: offsets) }
+                    rowView(for: iou)
                 }
             } header: {
                 totalHeader
             }
         }
         .listStyle(InsetGroupedListStyle())
+    }
+
+    // MARK: - Row helpers
+
+    @ViewBuilder
+    private func rowView(for iou: IOU) -> some View {
+        if #available(iOS 15, *) {
+            DebtRowView(iou: iou)
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button(role: .destructive) {
+                        withAnimation { viewModel.delete(iou) }
+                    } label: {
+                        Label("Apagar", systemImage: "trash.fill")
+                    }
+
+                    Button {
+                        withAnimation { viewModel.markAsPaid(iou) }
+                    } label: {
+                        Label("Pago", systemImage: "checkmark.circle.fill")
+                    }
+                    .tint(.blue)
+                }
+                .contextMenu { contextMenuContent(for: iou) }
+        } else {
+            DebtRowView(iou: iou)
+                .contextMenu { contextMenuContent(for: iou) }
+        }
+    }
+
+    @ViewBuilder
+    private func contextMenuContent(for iou: IOU) -> some View {
+        Button(action: {
+            withAnimation { viewModel.markAsPaid(iou) }
+        }) {
+            Label("Marcar como Pago", systemImage: "checkmark.circle.fill")
+        }
+
+        Button(action: {
+            WhatsAppHelper.sendReminder(to: iou.wrappedPersonName, amount: iou.amount)
+        }) {
+            Label("Cobrar via WhatsApp", systemImage: "message.fill")
+        }
+
+        Button(action: {
+            withAnimation { viewModel.delete(iou) }
+        }) {
+            Label("Apagar", systemImage: "trash.fill")
+        }
     }
 
     private var totalHeader: some View {

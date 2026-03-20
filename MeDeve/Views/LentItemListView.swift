@@ -67,38 +67,61 @@ struct LentItemListView: View {
         List {
             Section {
                 ForEach(viewModel.lentItems, id: \.id) { item in
-                    LentItemRowView(item: item)
-                        .contextMenu {
-                            Button(action: {
-                                withAnimation { viewModel.markAsReturned(item) }
-                            }) {
-                                Label("Marcar como Devolvido", systemImage: "checkmark.circle.fill")
-                            }
-
-                            Button(action: {
-                                WhatsAppHelper.sendItemReminder(
-                                    to: item.wrappedPersonName,
-                                    itemName: item.wrappedItemName
-                                )
-                            }) {
-                                Label("Cobrar via WhatsApp", systemImage: "message.fill")
-                            }
-
-                            Button(action: {
-                                withAnimation { viewModel.delete(item) }
-                            }) {
-                                Label("Apagar", systemImage: "trash.fill")
-                            }
-                        }
-                }
-                .onDelete { offsets in
-                    withAnimation { viewModel.delete(at: offsets) }
+                    rowView(for: item)
                 }
             } header: {
                 itemCountHeader
             }
         }
         .listStyle(InsetGroupedListStyle())
+    }
+
+    // MARK: - Row helpers
+
+    @ViewBuilder
+    private func rowView(for item: LentItem) -> some View {
+        if #available(iOS 15, *) {
+            LentItemRowView(item: item)
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button(role: .destructive) {
+                        withAnimation { viewModel.delete(item) }
+                    } label: {
+                        Label("Apagar", systemImage: "trash.fill")
+                    }
+
+                    Button {
+                        withAnimation { viewModel.markAsReturned(item) }
+                    } label: {
+                        Label("Devolvido", systemImage: "checkmark.circle.fill")
+                    }
+                    .tint(.blue)
+                }
+                .contextMenu { contextMenuContent(for: item) }
+        } else {
+            LentItemRowView(item: item)
+                .contextMenu { contextMenuContent(for: item) }
+        }
+    }
+
+    @ViewBuilder
+    private func contextMenuContent(for item: LentItem) -> some View {
+        Button(action: {
+            withAnimation { viewModel.markAsReturned(item) }
+        }) {
+            Label("Marcar como Devolvido", systemImage: "checkmark.circle.fill")
+        }
+
+        Button(action: {
+            WhatsAppHelper.sendItemReminder(to: item.wrappedPersonName, itemName: item.wrappedItemName)
+        }) {
+            Label("Cobrar via WhatsApp", systemImage: "message.fill")
+        }
+
+        Button(action: {
+            withAnimation { viewModel.delete(item) }
+        }) {
+            Label("Apagar", systemImage: "trash.fill")
+        }
     }
 
     private var itemCountHeader: some View {

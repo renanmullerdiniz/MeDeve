@@ -8,4 +8,12 @@
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="personName" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="LentItem" representedClassName="LentItem" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isReturned" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="personName" optional="YES" attributeType="String"/>
+    </entity>
 </model>

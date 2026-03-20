@@ -3,6 +3,7 @@ import SwiftUI
 struct DebtRowView: View {
 
     let iou: IOU
+    var onPaid: (() -> Void)? = nil
 
     var body: some View {
         HStack(alignment: .center, spacing: 14) {
@@ -41,15 +42,25 @@ struct DebtRowView: View {
                     .font(.caption2)
                     .foregroundColor(elapsedColor(iou.embarrassmentLevel))
 
-                Button(action: {
-                    WhatsAppHelper.sendReminder(to: iou.wrappedPersonName, amount: iou.amount)
-                }) {
-                    Image(systemName: "message.fill")
-                        .font(.footnote)
-                        .foregroundColor(.green)
+                HStack(spacing: 10) {
+                    Button(action: {
+                        WhatsAppHelper.sendReminder(to: iou.wrappedPersonName, amount: iou.amount)
+                    }) {
+                        Image(systemName: "message.fill")
+                            .font(.title3)
+                            .foregroundColor(.green)
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                    .accessibilityLabel("Cobrar \(iou.wrappedPersonName) via WhatsApp")
+
+                    Button(action: { onPaid?() }) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.title3)
+                            .foregroundColor(.blue)
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                    .accessibilityLabel("Marcar \(iou.wrappedPersonName) como pago")
                 }
-                .buttonStyle(BorderlessButtonStyle())
-                .accessibilityLabel("Cobrar \(iou.wrappedPersonName) via WhatsApp")
             }
         }
         .padding(.vertical, 6)

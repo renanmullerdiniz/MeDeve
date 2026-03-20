@@ -1,13 +1,13 @@
 import SwiftUI
 import CoreData
 
-struct DebtListView: View {
+struct LentItemListView: View {
 
-    @StateObject private var viewModel: IOUViewModel
-    @State private var showingAddDebt = false
+    @StateObject private var viewModel: LentItemViewModel
+    @State private var showingAddItem = false
 
     init(context: NSManagedObjectContext) {
-        _viewModel = StateObject(wrappedValue: IOUViewModel(context: context))
+        _viewModel = StateObject(wrappedValue: LentItemViewModel(context: context))
     }
 
     var body: some View {
@@ -15,26 +15,26 @@ struct DebtListView: View {
             ZStack {
                 Color(.systemBackground).ignoresSafeArea()
 
-                if viewModel.ious.isEmpty {
+                if viewModel.lentItems.isEmpty {
                     emptyStateView
                 } else {
-                    debtList
+                    itemList
                 }
             }
-            .navigationTitle("MeDeve")
+            .navigationTitle("Empréstimos")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { showingAddDebt = true }) {
+                    Button(action: { showingAddItem = true }) {
                         Image(systemName: "plus.circle.fill")
                             .font(.title2)
                             .foregroundColor(.blue)
                     }
-                    .accessibilityLabel("Adicionar dívida")
+                    .accessibilityLabel("Adicionar empréstimo")
                 }
             }
-            .sheet(isPresented: $showingAddDebt, onDismiss: viewModel.fetchIOUs) {
-                AddDebtView(viewModel: viewModel)
+            .sheet(isPresented: $showingAddItem, onDismiss: viewModel.fetchLentItems) {
+                AddLentItemView(viewModel: viewModel)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -44,11 +44,11 @@ struct DebtListView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: 16) {
-            Image(systemName: "checkmark.seal.fill")
+            Image(systemName: "tshirt.fill")
                 .font(.system(size: 72))
-                .foregroundColor(.green)
+                .foregroundColor(.blue)
 
-            Text("Você não tem cobranças pendentes!")
+            Text("Nenhum item emprestado!")
                 .font(.title3)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -63,31 +63,29 @@ struct DebtListView: View {
 
     // MARK: - List
 
-    private var debtList: some View {
+    private var itemList: some View {
         List {
             Section {
-                ForEach(viewModel.ious, id: \.id) { iou in
-                    DebtRowView(iou: iou, onPaid: {
-                        withAnimation { viewModel.markAsPaid(iou) }
-                    })
+                ForEach(viewModel.lentItems, id: \.id) { item in
+                    LentItemRowView(item: item)
                         .contextMenu {
                             Button(action: {
-                                withAnimation { viewModel.markAsPaid(iou) }
+                                withAnimation { viewModel.markAsReturned(item) }
                             }) {
-                                Label("Marcar como Pago", systemImage: "checkmark.circle.fill")
+                                Label("Marcar como Devolvido", systemImage: "checkmark.circle.fill")
                             }
 
                             Button(action: {
-                                WhatsAppHelper.sendReminder(
-                                    to: iou.wrappedPersonName,
-                                    amount: iou.amount
+                                WhatsAppHelper.sendItemReminder(
+                                    to: item.wrappedPersonName,
+                                    itemName: item.wrappedItemName
                                 )
                             }) {
                                 Label("Cobrar via WhatsApp", systemImage: "message.fill")
                             }
 
                             Button(action: {
-                                withAnimation { viewModel.delete(iou) }
+                                withAnimation { viewModel.delete(item) }
                             }) {
                                 Label("Apagar", systemImage: "trash.fill")
                             }
@@ -97,35 +95,25 @@ struct DebtListView: View {
                     withAnimation { viewModel.delete(at: offsets) }
                 }
             } header: {
-                totalHeader
+                itemCountHeader
             }
         }
         .listStyle(InsetGroupedListStyle())
     }
 
-    private var totalHeader: some View {
-        let total = viewModel.ious.reduce(0) { $0 + $1.amount }
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale      = Locale(identifier: "pt_BR")
-        let formatted = formatter.string(from: NSNumber(value: total)) ?? "R$ \(total)"
-
-        return HStack {
-            Text("\(viewModel.ious.count) dívida\(viewModel.ious.count == 1 ? "" : "s")")
+    private var itemCountHeader: some View {
+        HStack {
+            Text("\(viewModel.lentItems.count) item\(viewModel.lentItems.count == 1 ? "" : "s") emprestado\(viewModel.lentItems.count == 1 ? "" : "s")")
                 .font(.caption)
                 .foregroundColor(.secondary)
             Spacer()
-            Text("Total: \(formatted)")
-                .font(.caption)
-                .fontWeight(.semibold)
-                .foregroundColor(.primary)
         }
         .textCase(nil)
     }
 }
 
-struct DebtListView_Previews: PreviewProvider {
+struct LentItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        DebtListView(context: PersistenceController.preview.container.viewContext)
+        LentItemListView(context: PersistenceController.preview.container.viewContext)
     }
 }

@@ -21,6 +21,11 @@
 		32C62AB92F677596005DF003 /* DebtListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAE2F677595005DF003 /* DebtListView.swift */; };
 		32C62ABA2F677596005DF003 /* DebtRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAF2F677595005DF003 /* DebtRowView.swift */; };
 		32C62ABB2F677596005DF003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AB02F677595005DF003 /* ContentView.swift */; };
+		32C62AC12F677600005DF003 /* LentItem+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC02F677600005DF003 /* LentItem+CoreData.swift */; };
+		32C62AC32F677600005DF003 /* LentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC22F677600005DF003 /* LentItemViewModel.swift */; };
+		32C62AC52F677600005DF003 /* LentItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC42F677600005DF003 /* LentItemRowView.swift */; };
+		32C62AC72F677600005DF003 /* AddLentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC62F677600005DF003 /* AddLentItemView.swift */; };
+		32C62AC92F677600005DF003 /* LentItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC82F677600005DF003 /* LentItemListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		32C62AAE2F677595005DF003 /* DebtListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtListView.swift; sourceTree = "<group>"; };
 		32C62AAF2F677595005DF003 /* DebtRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtRowView.swift; sourceTree = "<group>"; };
 		32C62AB02F677595005DF003 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32C62AC02F677600005DF003 /* LentItem+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LentItem+CoreData.swift"; sourceTree = "<group>"; };
+		32C62AC22F677600005DF003 /* LentItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LentItemViewModel.swift; sourceTree = "<group>"; };
+		32C62AC42F677600005DF003 /* LentItemRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LentItemRowView.swift; sourceTree = "<group>"; };
+		32C62AC62F677600005DF003 /* AddLentItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLentItemView.swift; sourceTree = "<group>"; };
+		32C62AC82F677600005DF003 /* LentItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LentItemListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				32C62AA92F677594005DF003 /* IOUViewModel.swift */,
+				32C62AC22F677600005DF003 /* LentItemViewModel.swift */,
 			);
 			name = ViewModels;
 			path = ../ViewModels;
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				32C62AAB2F677594005DF003 /* IOU+CoreData.swift */,
+				32C62AC02F677600005DF003 /* LentItem+CoreData.swift */,
 			);
 			name = Models;
 			path = ../Models;
@@ -148,6 +160,9 @@
 				32C62AAE2F677595005DF003 /* DebtListView.swift */,
 				32C62AAF2F677595005DF003 /* DebtRowView.swift */,
 				32C62AB02F677595005DF003 /* ContentView.swift */,
+				32C62AC42F677600005DF003 /* LentItemRowView.swift */,
+				32C62AC62F677600005DF003 /* AddLentItemView.swift */,
+				32C62AC82F677600005DF003 /* LentItemListView.swift */,
 			);
 			name = Views;
 			path = ../Views;
@@ -235,6 +250,11 @@
 				32C62A922F677521005DF003 /* MeDeve.xcdatamodeld in Sources */,
 				32C62AB12F677596005DF003 /* MeDeveApp.swift in Sources */,
 				32C62AB42F677596005DF003 /* WhatsAppHelper.swift in Sources */,
+				32C62AC12F677600005DF003 /* LentItem+CoreData.swift in Sources */,
+				32C62AC32F677600005DF003 /* LentItemViewModel.swift in Sources */,
+				32C62AC52F677600005DF003 /* LentItemRowView.swift in Sources */,
+				32C62AC72F677600005DF003 /* AddLentItemView.swift in Sources */,
+				32C62AC92F677600005DF003 /* LentItemListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

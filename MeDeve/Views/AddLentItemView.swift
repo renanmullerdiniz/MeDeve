@@ -1,21 +1,17 @@
 import SwiftUI
 
-struct AddDebtView: View {
+struct AddLentItemView: View {
 
-    @ObservedObject var viewModel: IOUViewModel
+    @ObservedObject var viewModel: LentItemViewModel
     @Environment(\.presentationMode) private var presentationMode
 
     @State private var personName = ""
-    @State private var amountText = ""
+    @State private var itemName   = ""
     @State private var note       = ""
-
-    private var parsedAmount: Double? {
-        Double(amountText.replacingOccurrences(of: ",", with: "."))
-    }
 
     private var isFormValid: Bool {
         !personName.trimmingCharacters(in: .whitespaces).isEmpty &&
-        (parsedAmount ?? 0) > 0
+        !itemName.trimmingCharacters(in: .whitespaces).isEmpty
     }
 
     var body: some View {
@@ -23,7 +19,7 @@ struct AddDebtView: View {
             List {
                 // Pessoa
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Quem te deve?")
+                    Text("Quem está com o item?")
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .textCase(.uppercase)
@@ -33,36 +29,35 @@ struct AddDebtView: View {
                 }
                 .padding(.vertical, 4)
 
-                // Valor
+                // Item
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Quanto?")
+                    Text("O que você emprestou?")
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .textCase(.uppercase)
-                    HStack {
-                        Text("R$")
-                            .foregroundColor(.secondary)
-                        TextField("0,00", text: $amountText)
-                            .keyboardType(.decimalPad)
-                    }
+                    TextField("Nome do item", text: $itemName)
+                        .autocapitalization(.sentences)
+                    Text("Ex: camiseta, jogo, livro, fone...")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                 }
                 .padding(.vertical, 4)
 
-                // Motivo
+                // Observação
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Por quê? (opcional)")
+                    Text("Observação (opcional)")
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .textCase(.uppercase)
-                    TextField("Motivo", text: $note)
-                    Text("Ex: churrasco, vaquinha, rolê...")
+                    TextField("Detalhe adicional", text: $note)
+                    Text("Ex: cor, tamanho, ocasião...")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
                 .padding(.vertical, 4)
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Registrar Dívida")
+            .navigationTitle("Novo Empréstimo")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -71,7 +66,7 @@ struct AddDebtView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: saveDebt) {
+                    Button(action: saveItem) {
                         Text("Salvar")
                             .fontWeight(.semibold)
                     }
@@ -83,23 +78,20 @@ struct AddDebtView: View {
 
     // MARK: - Save
 
-    private func saveDebt() {
-        guard let amount = parsedAmount, amount > 0 else { return }
-
-        viewModel.addIOU(
+    private func saveItem() {
+        viewModel.addLentItem(
             personName: personName.trimmingCharacters(in: .whitespaces),
-            amount: amount,
+            itemName: itemName.trimmingCharacters(in: .whitespaces),
             note: note
         )
-
         presentationMode.wrappedValue.dismiss()
     }
 }
 
-struct AddDebtView_Previews: PreviewProvider {
+struct AddLentItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddDebtView(
-            viewModel: IOUViewModel(
+        AddLentItemView(
+            viewModel: LentItemViewModel(
                 context: PersistenceController.preview.container.viewContext
             )
         )

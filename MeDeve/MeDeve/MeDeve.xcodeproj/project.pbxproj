@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		323182432F6E0AA10060E879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323182422F6E0AA10060E879 /* LaunchScreen.storyboard */; };
 		32C62A922F677521005DF003 /* MeDeve.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32C62A902F677521005DF003 /* MeDeve.xcdatamodeld */; };
 		32C62A962F677524005DF003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C62A952F677524005DF003 /* Assets.xcassets */; };
 		32C62A9A2F677524005DF003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C62A992F677524005DF003 /* Preview Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		32C62AB32F677596005DF003 /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA42F677592005DF003 /* HapticHelper.swift */; };
 		32C62AB42F677596005DF003 /* WhatsAppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA52F677592005DF003 /* WhatsAppHelper.swift */; };
 		32C62AB52F677596005DF003 /* EmbarrassmentBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */; };
-		32C62ACA2F677700005DF003 /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62ACB2F677700005DF003 /* SnackbarView.swift */; };
 		32C62AB62F677596005DF003 /* IOUViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA92F677594005DF003 /* IOUViewModel.swift */; };
 		32C62AB72F677596005DF003 /* IOU+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAB2F677594005DF003 /* IOU+CoreData.swift */; };
 		32C62AB82F677596005DF003 /* AddDebtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAD2F677595005DF003 /* AddDebtView.swift */; };
@@ -27,9 +27,11 @@
 		32C62AC52F677600005DF003 /* LentItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC42F677600005DF003 /* LentItemRowView.swift */; };
 		32C62AC72F677600005DF003 /* AddLentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC62F677600005DF003 /* AddLentItemView.swift */; };
 		32C62AC92F677600005DF003 /* LentItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AC82F677600005DF003 /* LentItemListView.swift */; };
+		32C62ACA2F677700005DF003 /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62ACB2F677700005DF003 /* SnackbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		323182422F6E0AA10060E879 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32C62A892F677521005DF003 /* MeDeve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeDeve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C62A912F677521005DF003 /* MeDeve.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeDeve.xcdatamodel; sourceTree = "<group>"; };
 		32C62A952F677524005DF003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,7 +42,6 @@
 		32C62AA42F677592005DF003 /* HapticHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
 		32C62AA52F677592005DF003 /* WhatsAppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsAppHelper.swift; sourceTree = "<group>"; };
 		32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarrassmentBadge.swift; sourceTree = "<group>"; };
-		32C62ACB2F677700005DF003 /* SnackbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		32C62AA92F677594005DF003 /* IOUViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUViewModel.swift; sourceTree = "<group>"; };
 		32C62AAB2F677594005DF003 /* IOU+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IOU+CoreData.swift"; sourceTree = "<group>"; };
 		32C62AAD2F677595005DF003 /* AddDebtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDebtView.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		32C62AC42F677600005DF003 /* LentItemRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LentItemRowView.swift; sourceTree = "<group>"; };
 		32C62AC62F677600005DF003 /* AddLentItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLentItemView.swift; sourceTree = "<group>"; };
 		32C62AC82F677600005DF003 /* LentItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LentItemListView.swift; sourceTree = "<group>"; };
+		32C62ACB2F677700005DF003 /* SnackbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				32C62A952F677524005DF003 /* Assets.xcassets */,
 				32C62A972F677524005DF003 /* MeDeve.entitlements */,
+				323182422F6E0AA10060E879 /* LaunchScreen.storyboard */,
 				32C62A902F677521005DF003 /* MeDeve.xcdatamodeld */,
 				32C62A982F677524005DF003 /* Preview Content */,
 			);
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				323182432F6E0AA10060E879 /* LaunchScreen.storyboard in Resources */,
 				32C62A9A2F677524005DF003 /* Preview Assets.xcassets in Resources */,
 				32C62A962F677524005DF003 /* Assets.xcassets in Resources */,
 			);
@@ -389,8 +393,7 @@
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -427,8 +430,7 @@
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

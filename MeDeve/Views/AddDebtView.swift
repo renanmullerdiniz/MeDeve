@@ -62,7 +62,7 @@ struct AddDebtView: View {
                 .padding(.vertical, 4)
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Nova Dívida")
+            .navigationTitle("Registrar Dívida")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

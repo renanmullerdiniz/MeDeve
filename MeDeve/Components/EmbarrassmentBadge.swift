@@ -25,7 +25,7 @@ struct EmbarrassmentBadge: View {
     var labelText: String {
         switch level {
         case .recent:   return "recente"
-        case .overdue:  return "atrasando"
+        case .overdue:  return "atrasado"
         case .critical: return "esqueceu\nmesmo"
         }
     }

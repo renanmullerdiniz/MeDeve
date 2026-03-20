@@ -15,6 +15,7 @@
 		32C62AB32F677596005DF003 /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA42F677592005DF003 /* HapticHelper.swift */; };
 		32C62AB42F677596005DF003 /* WhatsAppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA52F677592005DF003 /* WhatsAppHelper.swift */; };
 		32C62AB52F677596005DF003 /* EmbarrassmentBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */; };
+		32C62ACA2F677700005DF003 /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62ACB2F677700005DF003 /* SnackbarView.swift */; };
 		32C62AB62F677596005DF003 /* IOUViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AA92F677594005DF003 /* IOUViewModel.swift */; };
 		32C62AB72F677596005DF003 /* IOU+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAB2F677594005DF003 /* IOU+CoreData.swift */; };
 		32C62AB82F677596005DF003 /* AddDebtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C62AAD2F677595005DF003 /* AddDebtView.swift */; };
@@ -39,6 +40,7 @@
 		32C62AA42F677592005DF003 /* HapticHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
 		32C62AA52F677592005DF003 /* WhatsAppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsAppHelper.swift; sourceTree = "<group>"; };
 		32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarrassmentBadge.swift; sourceTree = "<group>"; };
+		32C62ACB2F677700005DF003 /* SnackbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		32C62AA92F677594005DF003 /* IOUViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUViewModel.swift; sourceTree = "<group>"; };
 		32C62AAB2F677594005DF003 /* IOU+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IOU+CoreData.swift"; sourceTree = "<group>"; };
 		32C62AAD2F677595005DF003 /* AddDebtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDebtView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				32C62AA72F677593005DF003 /* EmbarrassmentBadge.swift */,
+				32C62ACB2F677700005DF003 /* SnackbarView.swift */,
 			);
 			name = Components;
 			path = ../Components;
@@ -241,6 +244,7 @@
 				32C62AB92F677596005DF003 /* DebtListView.swift in Sources */,
 				32C62ABA2F677596005DF003 /* DebtRowView.swift in Sources */,
 				32C62AB52F677596005DF003 /* EmbarrassmentBadge.swift in Sources */,
+				32C62ACA2F677700005DF003 /* SnackbarView.swift in Sources */,
 				32C62AB72F677596005DF003 /* IOU+CoreData.swift in Sources */,
 				32C62AB62F677596005DF003 /* IOUViewModel.swift in Sources */,
 				32C62AB32F677596005DF003 /* HapticHelper.swift in Sources */,

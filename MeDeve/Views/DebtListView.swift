@@ -67,7 +67,9 @@ struct DebtListView: View {
         List {
             Section {
                 ForEach(viewModel.ious, id: \.id) { iou in
-                    DebtRowView(iou: iou)
+                    DebtRowView(iou: iou, onPaid: {
+                        withAnimation { viewModel.markAsPaid(iou) }
+                    })
                         .contextMenu {
                             Button(action: {
                                 withAnimation { viewModel.markAsPaid(iou) }

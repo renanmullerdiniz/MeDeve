@@ -22,15 +22,29 @@ struct EmbarrassmentBadge: View {
         }
     }
 
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(color.opacity(0.2))
-                .frame(width: 20, height: 20)
+    var labelText: String {
+        switch level {
+        case .recent:   return "recente"
+        case .overdue:  return "atrasando"
+        case .critical: return "esqueceu\nmesmo"
+        }
+    }
 
-            Circle()
-                .fill(color)
-                .frame(width: 12, height: 12)
+    var body: some View {
+        VStack(spacing: 2) {
+            ZStack {
+                Circle()
+                    .fill(color.opacity(0.2))
+                    .frame(width: 20, height: 20)
+
+                Circle()
+                    .fill(color)
+                    .frame(width: 12, height: 12)
+            }
+            Text(labelText)
+                .font(.caption2)
+                .foregroundColor(color)
+                .multilineTextAlignment(.center)
         }
         .accessibilityElement()
         .accessibilityLabel(accessibilityText)
@@ -40,18 +54,9 @@ struct EmbarrassmentBadge: View {
 struct EmbarrassmentBadge_Previews: PreviewProvider {
     static var previews: some View {
         HStack(spacing: 24) {
-            VStack {
-                EmbarrassmentBadge(level: .recent)
-                Text("Recente").font(.caption2)
-            }
-            VStack {
-                EmbarrassmentBadge(level: .overdue)
-                Text("Atrasado").font(.caption2)
-            }
-            VStack {
-                EmbarrassmentBadge(level: .critical)
-                Text("Crítico").font(.caption2)
-            }
+            EmbarrassmentBadge(level: .recent)
+            EmbarrassmentBadge(level: .overdue)
+            EmbarrassmentBadge(level: .critical)
         }
         .padding()
         .previewLayout(.sizeThatFits)
